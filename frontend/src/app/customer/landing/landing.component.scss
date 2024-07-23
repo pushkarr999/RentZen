@@ -1,0 +1,204 @@
+.example-card {
+  color: #333; /* Darker text color for better contrast */
+  width: 100%;
+  cursor: pointer;
+}
+
+.mat-mdc-card-header {
+  justify-content: center;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.category-section {
+  background: linear-gradient(
+    135deg,
+    #f7f5fb,
+    #fde9e3
+  ); /* Pale Lavender to Light Pink*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  color: #4a4a4a; /* Dark Gray */
+
+  padding-inline: 8rem;
+  padding-block: 4rem;
+}
+
+.container-content {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Adjust min-width as needed */
+  column-gap: 1rem; /* Adjust spacing between cards */
+  row-gap: 2rem;
+}
+
+.container {
+  margin-block: 2rem;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliders {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px; /* Adjust the border radius as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 1px solid #ddd; /* Light border for better visibility on white background */
+  display: block; /* Ensure the image is displayed as a block element */
+  max-width: 100%; /* Responsive design: ensure the image doesn't overflow its container */
+  margin: auto; /* Center the image */
+}
+
+.services-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(
+    135deg,
+    #f7f5fb,
+    #fde9e3
+  ); /* Pale Lavender to Light Peach */
+
+  color: #4a4a4a; /* Dark Gray */
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  margin-inline: 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.service-card {
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.service-card img {
+  max-width: 50px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+//This is for offers section
+.offers-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.offers-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.offers-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.offer-card {
+  background: linear-gradient(135deg, #5b247a, #1bcedf);
+  color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  margin-right: 20px;
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offer-card:last-child {
+  margin-right: 0;
+}
+
+.offer-content {
+  flex: 1;
+}
+
+.offer-code {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.copy-btn {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.copy-btn::before {
+  content: "\1F4CB"; /* Clipboard emoji */
+  margin-right: 5px;
+}
+
+.copy-btn:hover {
+  background-color: #e0e0e0;
+}
+
+//This styles scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+  flex-shrink: 0;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #97a1b6;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+  /* Set the height of the scrollbar thumb */
+  height: 6px; /* Adjust this value as needed */
+}

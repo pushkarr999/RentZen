@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<div class="services-section">
+  <div class="services-grid">
+    <div class="service-card" *ngFor="let data of datas">
+      <h3>{{ data.name }}</h3>
+      <h4>Rs {{ data.price }}</h4>
+      <h4>Rating {{ data.rating }} / 5</h4>
+      <img [src]="data.img" alt="img" />
+      <p>
+        {{ data.description }}
+      </p>
+      Add to :
+      <div class="cart">
+        <button
+          style="margin: 0.5rem; cursor: pointer"
+          mat-icon-button
+          aria-label="wishlist"
+          (click)="editItem(data)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

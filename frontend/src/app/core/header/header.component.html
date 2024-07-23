@@ -1,0 +1,56 @@
+<mat-toolbar class="toolbar">
+  <div matPrefix>
+    <img
+      class="logo"
+      (click)="goToHome()"
+      src="../../../assets/logo.png"
+      alt="logo"
+    />
+  </div>
+
+  <div class="toolbar-contents">
+    <mat-form-field class="custom-form-field" appearance="outline">
+      <mat-label>Search</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput placeholder="Enter Search" />
+    </mat-form-field>
+
+    <div class="toolbar-buttons">
+      <button
+        *ngIf="role == 1"
+        mat-icon-button
+        aria-label="cart"
+        (click)="addFurniture()"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="account"
+        aria-label="user profile"
+      >
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+      <button mat-icon-button aria-label="wishlist" (click)="openWishlist()">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+
+      <button mat-icon-button aria-label="cart">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-menu #account="matMenu">
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>delete_outline</mat-icon>
+    <span>Logout</span>
+  </button>
+  <button *ngIf="role == 1" mat-menu-item (click)="manageListing()">
+    <mat-icon>list</mat-icon>
+    <span>Manage Listings</span>
+  </button>
+</mat-menu>

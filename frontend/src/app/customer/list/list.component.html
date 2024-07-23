@@ -1,0 +1,136 @@
+<app-header></app-header>
+<div class="box-body">
+  <form novalidate #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+    <!-- Checkbox -->
+    <div class="form">
+      <div class="form-group">
+        <div
+          class="form-check"
+          *ngFor="let category of formData.category | keyvalue"
+        >
+          <input
+            class="form-check-input"
+            type="checkbox"
+            [id]="category.key"
+            [name]="category.key"
+            [(ngModel)]="category.value.selected"
+          />
+          <label class="form-check-label" for="checkbox">{{
+            category.value.label
+          }}</label>
+        </div>
+      </div>
+
+      <!-- Material Slider (Range Slider) -->
+      <div class="form-group">
+        <label for="slider"
+          >Price: {{ formData.price.priceStart }} -
+          {{ formData.price.priceEnd }}</label
+        >
+        <mat-slider min="0" max="100000" step="500">
+          <input
+            matSliderStartThumb
+            id="priceStart"
+            name="priceStart"
+            [(ngModel)]="formData.price.priceStart"
+          />
+          <input
+            matSliderEndThumb
+            id="priceEnd"
+            name="priceEnd"
+            [(ngModel)]="formData.price.priceEnd"
+          />
+        </mat-slider>
+
+        <label for="slider"
+          >Rating: {{ formData.rating.ratingStart }} -
+          {{ formData.rating.ratingEnd }}</label
+        >
+        <mat-slider min="0" max="5" step="0.5">
+          <input
+            matSliderStartThumb
+            id="ratingStart"
+            name="ratingStart"
+            [(ngModel)]="formData.rating.ratingStart"
+          />
+          <input
+            matSliderEndThumb
+            id="ratingEnd"
+            name="ratingEnd"
+            [(ngModel)]="formData.rating.ratingEnd"
+          />
+        </mat-slider>
+
+        <label for="sortField">Sort by:</label>
+        <select id="sortField" name="sortField" [(ngModel)]="formData.sortBy">
+          <option value="nameasc">Name (Asc)</option>
+          <option value="priceasc">Price (Asc)</option>
+          <option value="namedsc">Name (Dsc)</option>
+          <option value="pricedsc">Price (Dsc)</option>
+          <!-- Add more options based on your sorting criteria -->
+        </select>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-secondary"
+      [disabled]="formRef.invalid"
+    >
+      Submit
+    </button>
+  </form>
+  <form
+    novalidate
+    #formRefNew="ngForm"
+    class="paginatorForm"
+    (ngSubmit)="changePage()"
+  >
+    Page Number:
+    <input
+      class="paginator"
+      type="text"
+      [name]="'page'"
+      [(ngModel)]="activePageNumber"
+    />
+    / {{ totalPageNum }}
+  </form>
+</div>
+
+<mat-divider></mat-divider>
+
+<div class="services-section">
+  <div class="services-grid">
+    <div class="service-card" *ngFor="let data of datas">
+      <h3>{{ data.name }}</h3>
+      <h4>Rs {{ data.price }}</h4>
+      <h4>Rating {{ data.rating }} / 5</h4>
+      <img [src]="data.img" alt="img" />
+      <p>
+        {{ data.description }}
+      </p>
+      Add to :
+      <div class="cart">
+        <button
+          style="margin: 0.5rem; cursor: pointer"
+          mat-icon-button
+          aria-label="wishlist"
+          (click)="addToWishList(data)"
+        >
+          <mat-icon>favorite_border</mat-icon>
+        </button>
+
+        <button
+          style="margin: 0.5rem; cursor: pointer"
+          mat-icon-button
+          aria-label="cart"
+          (click)="addToCart(data)"
+        >
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

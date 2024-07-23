@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "37b6a872-3701-45f3-b412-099bd1cb223d",
+		"name": "Furniture-Renting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3574093",
+		"_collection_link": "https://solardesert.postman.co/workspace/UtopiaTech~0f133d4b-6fbb-493c-8643-22f915b2761b/collection/3574093-37b6a872-3701-45f3-b412-099bd1cb223d?action=share&source=collection_link&creator=3574093"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test user\",\n    \"email\": \"test2@gmail.com\",\n    \"password\": \"Test@1234\",\n    \"username\": \"testuser2\",\n    \"role\": 1,\n    \"mobile_no\": \"9900998899\",\n    \"country_code\": \"+91\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test2@gmail.com\",\n    \"password\": \"Test@1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiX2lkIjoiNjY3ZmFmMzZlMzEzNjVlNWQzZDIwNDVkIiwiaWF0IjoxNzE5NjQ5MDI0LCJleHAiOjE3MTk3MzU0MjQsImF1ZCI6ImFkbWluQHJlbnR6ZW4uaW4iLCJpc3MiOiJhZG1pbkByZW50emVuLmluIiwic3ViIjoidGVzdEBnbWFpbC5jb20ifQ.YS8wk3qdNyMz9DXtA1QJD6jkjLqB4pxLitIBLkE9mBs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": \"Mumbai\",\n    \"mobile_no\": \"9900998899\",\n    \"country_code\": \"+91\",\n    \"lat\": 19.1818181,\n    \"lng\": 102.3404033\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update furniture",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGdtYWlsLmNvbSIsIl9pZCI6IjY2N2ZkNDgxYWM5Zjc0NmQzMWE0MmVjNiIsInJvbGUiOjEsImlhdCI6MTcxOTY1MzUxNywiZXhwIjoxNzE5NzM5OTE3LCJhdWQiOiJhZG1pbkByZW50emVuLmluIiwiaXNzIjoiYWRtaW5AcmVudHplbi5pbiIsInN1YiI6InRlc3QyQGdtYWlsLmNvbSJ9.h_0gT0n9aXbmhPeOVHdytBxDt2VyF8T2AnM9O0sZfGk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sofa\",\n    \"description\": \"This is sofa, an sofa is thisss\",\n    \"price\": 2332,\n    \"type\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/furniture/update?id=667fd690e876cc7a7fc28736",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"furniture",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "667fd690e876cc7a7fc28736"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create furniture",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGdtYWlsLmNvbSIsIl9pZCI6IjY2N2ZkNDgxYWM5Zjc0NmQzMWE0MmVjNiIsInJvbGUiOjEsImlhdCI6MTcxOTY1MzUxNywiZXhwIjoxNzE5NzM5OTE3LCJhdWQiOiJhZG1pbkByZW50emVuLmluIiwiaXNzIjoiYWRtaW5AcmVudHplbi5pbiIsInN1YiI6InRlc3QyQGdtYWlsLmNvbSJ9.h_0gT0n9aXbmhPeOVHdytBxDt2VyF8T2AnM9O0sZfGk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sofa\",\n    \"description\": \"This is sofa, an sofa is thisss\",\n    \"price\": 2332,\n    \"type\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/furniture/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"furniture",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Furniture",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGdtYWlsLmNvbSIsIl9pZCI6IjY2N2ZkNDgxYWM5Zjc0NmQzMWE0MmVjNiIsInJvbGUiOjEsImlhdCI6MTcxOTY1MzUxNywiZXhwIjoxNzE5NzM5OTE3LCJhdWQiOiJhZG1pbkByZW50emVuLmluIiwiaXNzIjoiYWRtaW5AcmVudHplbi5pbiIsInN1YiI6InRlc3QyQGdtYWlsLmNvbSJ9.h_0gT0n9aXbmhPeOVHdytBxDt2VyF8T2AnM9O0sZfGk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"limit\": 10,\n    \"skip\": 0,\n    \"filters\": {\n        \"users_id\": \"6680029fc368566ab1234fa5\"\n    },\n    \"sort\": {\n        // \"name\": 1,\n        // \"rating\": -1,\n        // \"price\": -1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/furniture",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"furniture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Furniture By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGdtYWlsLmNvbSIsIl9pZCI6IjY2N2ZkNDgxYWM5Zjc0NmQzMWE0MmVjNiIsInJvbGUiOjEsImlhdCI6MTcxOTY1MzUxNywiZXhwIjoxNzE5NzM5OTE3LCJhdWQiOiJhZG1pbkByZW50emVuLmluIiwiaXNzIjoiYWRtaW5AcmVudHplbi5pbiIsInN1YiI6InRlc3QyQGdtYWlsLmNvbSJ9.h_0gT0n9aXbmhPeOVHdytBxDt2VyF8T2AnM9O0sZfGk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/furniture/detail/667fd690e876cc7a7fc28736",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"furniture",
+						"detail",
+						"667fd690e876cc7a7fc28736"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGdtYWlsLmNvbSIsIl9pZCI6IjY2N2ZkNDgxYWM5Zjc0NmQzMWE0MmVjNiIsInJvbGUiOjEsImlhdCI6MTcxOTY1MzUxNywiZXhwIjoxNzE5NzM5OTE3LCJhdWQiOiJhZG1pbkByZW50emVuLmluIiwiaXNzIjoiYWRtaW5AcmVudHplbi5pbiIsInN1YiI6InRlc3QyQGdtYWlsLmNvbSJ9.h_0gT0n9aXbmhPeOVHdytBxDt2VyF8T2AnM9O0sZfGk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create History(Add cart)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGdtYWlsLmNvbSIsIl9pZCI6IjY2N2ZkNDgxYWM5Zjc0NmQzMWE0MmVjNiIsInJvbGUiOjEsImlhdCI6MTcxOTY1MzUxNywiZXhwIjoxNzE5NzM5OTE3LCJhdWQiOiJhZG1pbkByZW50emVuLmluIiwiaXNzIjoiYWRtaW5AcmVudHplbi5pbiIsInN1YiI6InRlc3QyQGdtYWlsLmNvbSJ9.h_0gT0n9aXbmhPeOVHdytBxDt2VyF8T2AnM9O0sZfGk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/history/create?furniture_id=668004bbdcdc79f0590682fb&type=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"history",
+						"create"
+					],
+					"query": [
+						{
+							"key": "furniture_id",
+							"value": "668004bbdcdc79f0590682fb"
+						},
+						{
+							"key": "type",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete History (Remove from cart)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InB1c2hrYXIxMjNAeW9wbWFpbC5jb20iLCJfaWQiOiI2NjgwMDY3NmExNGFjMTM1MzI4MTYxNzMiLCJyb2xlIjowLCJpYXQiOjE3MTk2NjY5NTksImV4cCI6MTcxOTc1MzM1OSwiYXVkIjoiYWRtaW5AcmVudHplbi5pbiIsImlzcyI6ImFkbWluQHJlbnR6ZW4uaW4iLCJzdWIiOiJwdXNoa2FyMTIzQHlvcG1haWwuY29tIn0.NNYXXkUPByb_OkofAvKtnfA2BS_4oZkBsTNkpKnS1XU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/history/remove?id=6680083372e52e42d5dd4a09&type=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"history",
+						"remove"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6680083372e52e42d5dd4a09"
+						},
+						{
+							"key": "type",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get History",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGdtYWlsLmNvbSIsIl9pZCI6IjY2N2ZkNDgxYWM5Zjc0NmQzMWE0MmVjNiIsInJvbGUiOjEsImlhdCI6MTcxOTY1MzUxNywiZXhwIjoxNzE5NzM5OTE3LCJhdWQiOiJhZG1pbkByZW50emVuLmluIiwiaXNzIjoiYWRtaW5AcmVudHplbi5pbiIsInN1YiI6InRlc3QyQGdtYWlsLmNvbSJ9.h_0gT0n9aXbmhPeOVHdytBxDt2VyF8T2AnM9O0sZfGk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": 2,\n    \"users_id\": \"667fd481ac9f746d31a42ec6\",\n    \"furnitures_id\": \"668004bbdcdc79f0590682fb\",\n    \"limit\": 10,\n    \"skip\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"history"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

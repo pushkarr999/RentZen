@@ -1,0 +1,66 @@
+<app-header></app-header>
+<!-- This is for carousel -->
+<div class="container">
+  <div class="sliders" (click)="openList()">
+    <ng-container *ngFor="let img of img_list; let i = index">
+      <div class="slider" *ngIf="current == i" @fade>
+        <img class="img" [src]="img" />
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<!-- This is for cards -->
+
+<div class="category-section">
+  <h2>Explore From Wide Range of Categories</h2>
+  <div class="container-content">
+    <div *ngFor="let category of categories">
+      <mat-card
+        class="example-card"
+        appearance="outlined"
+        (click)="openListCategory(category.type)"
+      >
+        <mat-card-header>
+          <mat-card-title>{{ category.label }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="category.imgLink" alt="category photo" />
+        <mat-card-content>
+          <p>
+            {{ category.content }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<!-- This is offers section -->
+<div class="offers-section">
+  <h2>Offers & Coupons</h2>
+  <div class="offers-container">
+    <div class="offer-card" *ngFor="let offer of offers">
+      <div class="offer-content">
+        <p>{{ offer.label }}</p>
+        <p class="offer-code">{{ offer.code }}</p>
+      </div>
+      <button class="copy-btn">Copy</button>
+    </div>
+  </div>
+</div>
+
+<!-- This is services section -->
+<div class="services-section">
+  <h2>Truly hassle free service</h2>
+  <div class="services-grid">
+    <div class="service-card" *ngFor="let service of services">
+      <img [src]="service.img" alt="Mint new products" />
+      <h3>{{ service.label }}</h3>
+      <p>
+        {{ service.content }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

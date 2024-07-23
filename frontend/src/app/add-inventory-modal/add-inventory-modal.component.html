@@ -1,0 +1,84 @@
+<mat-card style="margin: 0px !important; height: 100%">
+  <mat-card-content
+    style="
+      text-align: center;
+      align-content: center;
+      padding: 10px 0px !important;
+    "
+  >
+    <div
+      style="display: flex; justify-content: space-between"
+      class="m-b-10 modal-header"
+    >
+      <span style="margin-top: 15px; font-size: 20px">
+        <strong>Add Inventory</strong>
+      </span>
+      <span>
+        <button mat-icon-button [mat-dialog-close]>
+          <mat-icon size="20">clear</mat-icon>
+        </button>
+      </span>
+    </div>
+
+    <div class="form-container">
+      <div class="left-column">
+        <img
+          src="../../assets/addimg.png"
+          alt="Inventory Image"
+          style="width: 200px; height: 200px; margin-right: -10px"
+        />
+      </div>
+      <div class="right-column login-card">
+        <form style="width: 90%" [formGroup]="_addform" (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="title" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea
+              matInput
+              rows="4"
+              formControlName="desc"
+              required
+            ></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Price</mat-label>
+            <input matInput type="number" formControlName="price" required />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type" required>
+              <mat-select-trigger class="p-l-5">
+                {{ getSelectedTypeName() }}
+              </mat-select-trigger>
+              <mat-option
+                *ngFor="let type of furniture_types"
+                [value]="type.value"
+              >
+                {{ type.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+    </div>
+
+    <div
+      fxLayout="row"
+      fxLayoutAlign="center bottom"
+      fxLayoutGap="30px"
+      style="margin-top: 15px"
+    >
+      <button
+        mat-raised-button
+        style="margin: 20px"
+        color="primary"
+        (click)="onSubmit()"
+      >
+        Submit
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

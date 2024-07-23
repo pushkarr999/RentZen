@@ -1,0 +1,49 @@
+/* Apply styles to form elements */
+.form-group {
+  width: 30%;
+  display: grid;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  color: #4a4a4a; /* Dark Gray text color */
+}
+
+.mat-slider-horizontal {
+  width: 100%; /* Make sliders take full width */
+}
+
+.mat-slider-thumb-label {
+  color: #4a4a4a; /* Dark Gray text color for slider labels */
+}
+
+.btn-secondary {
+  background-color: #b2dfdb; /* Soft Teal button color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 6rem;
+  margin-block: 2rem;
+}
+
+.btn-secondary:hover {
+  background-color: #70cbc6; /* Darker shade for hover effect */
+}
+
+/* Checkbox styles */
+.form-check-input {
+  margin-right: 10px;
+}
+
+/* Adjust spacing for checkboxes */
+.form-check {
+  margin-bottom: 15px;
+}
+
+.form {
+  display: block;
+  margin-top: 4rem;
+  margin-inline: 4rem;
+}

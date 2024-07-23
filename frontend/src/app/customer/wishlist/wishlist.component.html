@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="services-section">
+  <div class="services-grid">
+    <div class="service-card" *ngFor="let data of datas">
+      <div *ngIf="data.furnitures_id !== null">
+        <h3>{{ data.furnitures_id.name }}</h3>
+        <h4>Rs {{ data.furnitures_id.price }}</h4>
+        <h4>Rating {{ data.furnitures_id.rating }} / 5</h4>
+        <img [src]="data.furnitures_id.img" alt="Mint new products" />
+        <p>
+          {{ data.furnitures_id.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+/* Apply styles to form elements */
+.form-group {
+  width: 30%;
+  display: grid;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  color: #4a4a4a; /* Dark Gray text color */
+}
+
+.mat-slider-horizontal {
+  width: 100%; /* Make sliders take full width */
+}
+
+.mat-slider-thumb-label {
+  color: #4a4a4a; /* Dark Gray text color for slider labels */
+}
+
+.btn-secondary {
+  background-color: #b2dfdb; /* Soft Teal button color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 4rem;
+  margin-bottom: 2rem;
+}
+
+.btn-secondary:hover {
+  background-color: #70cbc6; /* Darker shade for hover effect */
+}
+
+/* Checkbox styles */
+.form-check-input {
+  margin-right: 10px;
+}
+
+/* Adjust spacing for checkboxes */
+.form-check {
+  margin-bottom: 15px;
+}
+
+.form {
+  display: flex;
+  margin-top: 4rem;
+  margin-inline: 4rem;
+}
+
+//Card for furniture list
+.services-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(
+    135deg,
+    #f7f5fb,
+    #fde9e3
+  ); /* Pale Lavender to Light Peach */
+
+  color: #4a4a4a; /* Dark Gray */
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  margin-inline: 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.service-card {
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.service-card img {
+  max-width: 50px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 0;
+}
+p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.paginator {
+  width: 2rem;
+}
+
+.paginatorForm {
+  position: fixed;
+  right: 0;
+  margin-top: 1rem;
+}

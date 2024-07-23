@@ -1,0 +1,98 @@
+<div
+  class="login-container"
+  style="
+    background-image: url(assets/bg_.png);
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+  "
+>
+  <mat-card class="login-card">
+    <mat-card-title style="margin: 5px">Sign Up</mat-card-title>
+    <form class="login-form" [formGroup]="_signinform" (ngSubmit)="onSubmit()">
+      <mat-radio-group
+        aria-label="Role"
+        class="role-selection"
+        formControlName="role"
+      >
+        <mat-radio-button color="primary" [value]="0"
+          >Customer</mat-radio-button
+        >
+        <mat-radio-button color="primary" [value]="1">Vendor</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>User Name</mat-label>
+        <input matInput type="text" formControlName="username" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Country code</mat-label>
+        <mat-select formControlName="countrycode" required>
+          <mat-select-trigger class="p-l-5">
+            {{ getSelectedCountry() }}
+          </mat-select-trigger>
+          <mat-option
+            *ngFor="let country of countrylist"
+            [value]="country.dialCode"
+          >
+            +{{ country.dialCode }} - {{ country.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Mobile No.</mat-label>
+        <input matInput type="tel" formControlName="ph_no" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" required />
+      </mat-form-field>
+      <div
+        *ngIf="
+          _signinform.controls['password'].invalid &&
+          _signinform.controls['password'].touched
+        "
+      >
+        <mat-error
+          *ngIf="
+            _signinform.controls['password'].invalid &&
+            _signinform.controls['password'].touched
+          "
+        >
+          <ul>
+            <li>
+              Password must be at least 8 characters and cannot exceed 16
+              characters.
+            </li>
+            <li>
+              Password must contain at least 1 number, 1 uppercase letter, 1
+              lowercase letter, and 1 special character.
+            </li>
+          </ul>
+        </mat-error>
+      </div>
+
+      <div>
+        <button mat-raised-button color="primary" type="submit">Sign Up</button>
+      </div>
+
+      <div class="link-container" style="margin-top: 5px">
+        <a [routerLink]="['/login']">Already have an account? Login</a>
+      </div>
+    </form>
+  </mat-card>
+</div>

@@ -1,4 +1,4 @@
-##RentZen
+## RentZen
 
 - System Requirements:
     - Node js : ^18.xx
